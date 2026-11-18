@@ -1,0 +1,31 @@
+const puppeteer = require('puppeteer-core')
+const OUT = 'C:/Users/zqy27/实验室设备预约管理系统/2026-10-30-09-12-56/lab-equipment-system/.shots'
+const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+const sleep = ms => new Promise(r => setTimeout(r, ms))
+;(async () => {
+  const browser = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox', '--disable-gpu'] })
+  const page = await browser.newPage()
+  await page.setViewport({ width: 1440, height: 900 })
+  const errs = []
+  page.on('pageerror', e => errs.push(e.message))
+  await page.goto('http://localhost:5173/', { waitUntil: 'networkidle2' }); await sleep(1200)
+  await page.type('input[placeholder="请输入账号"]', 'stu2026001')
+  await page.type('input[placeholder="请输入密码"]', '123456')
+  await page.evaluate(() => { [...document.querySelectorAll('button')].find(b => b.textContent.replace(/\s/g, '').includes('登录')).click() })
+  await sleep(3500)
+  await page.screenshot({ path: `${OUT}/student-dashboard.png` })
+  const sidebar = await page.evaluate(() => document.querySelector('.menu, .aside, aside, [class*="menu"]')?.innerText.replace(/\s+/g, ' | '))
+  // 直接访问管理员路由，观察守卫行为
+  await page.goto('http://localhost:5173/credits', { waitUntil: 'networkidle2' }).catch(()=>{}); await sleep(1500)
+  const url1 = page.url()
+  await page.goto('http://localhost:5173/config', { waitUntil: 'networkidle2' }).catch(()=>{}); await sleep(1500)
+  const url2 = page.url()
+  const pageText = await page.evaluate(() => document.body.innerText.replace(/\s+/g, ' ').slice(0, 120))
+  console.log('ERRORS:', errs.length)
+  console.log('SIDEBAR:', sidebar)
+  console.log('AFTER /credits ->', url1)
+  console.log('AFTER /config  ->', url2)
+  console.log('TEXT:', pageText)
+  await page.screenshot({ path: `${OUT}/student-guard.png` })
+  await browser.close()
+})().catch(e => { console.error('FAILED:', e.message); process.exit(1) })

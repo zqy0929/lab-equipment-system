@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 设备手册贴纸图标：莫兰迪雾蓝书本 + 玻璃青对勾书签 -->
+  <g stroke="#3a4750" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- 书本 -->
+    <path d="M12 10 h30 a6 6 0 0 1 6 6 v38 h-30 a6 6 0 0 1 -6 -6 z" fill="#ffffff"/>
+    <path d="M12 10 v38" fill="none"/>
+    <path d="M48 54 v-38" fill="none"/>
+    <!-- 书脊 -->
+    <path d="M18 10 v44" fill="none" stroke="#9fb8ae" stroke-width="3"/>
+    <!-- 文字行 -->
+    <path d="M25 20 h16" stroke="#b9c8d1" stroke-width="3"/>
+    <path d="M25 28 h16" stroke="#b9c8d1" stroke-width="3"/>
+    <path d="M25 36 h10" stroke="#b9c8d1" stroke-width="3"/>
+    <!-- 书签 -->
+    <path d="M37 42 l5 4 5 -4 v14 h-10 z" fill="#9fb8ae"/>
+  </g>
+</svg>

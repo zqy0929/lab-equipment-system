@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 个人中心贴纸图标：莫兰迪雾紫圆角底 + 用户头像 -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#ece9f2"/>
+  <g stroke="#3a4750" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="32" cy="25" r="9.5" fill="#bdb7cf"/>
+    <path d="M14.5 52c0-8.6 7.8-14.5 17.5-14.5S49.5 43.4 49.5 52"
+          fill="#cdc7dd"/>
+  </g>
+</svg>

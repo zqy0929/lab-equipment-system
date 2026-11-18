@@ -1,0 +1,33 @@
+# 依赖与构建产物
+node_modules/
+frontend/node_modules/
+backend/target/
+dist/
+*.jar
+*.war
+
+# 上传文件（运行时生成）
+uploads/
+.shots/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# 日志与系统文件
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# 上传辅助脚本（内含 token 读取逻辑，不入库）
+.github-upload.py
+
+# 本地环境覆盖配置（含数据库密码等敏感信息）
+backend/src/main/resources/application-local.yml
+env.local.bat
+.env
+.env.local

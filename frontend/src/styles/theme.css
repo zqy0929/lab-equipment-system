@@ -1,0 +1,605 @@
+/* ============================================================
+   莫兰迪蓝 · 实验室主题  Morandi Blue Lab Theme
+   ------------------------------------------------------------
+   主色      #8FA9BC  莫兰迪雾蓝（按钮 / 强调 / 选中态）
+   玻璃青    #9FB8AE  玻璃器皿冷绿（空闲 / 通过 / 成功）
+   试剂琥珀  #C9B4A0  试剂瓶暖琥珀（待审批 / 提醒）
+   石蕊紫    #A9A6B8  石蕊指示剂灰紫（次要信息 / 标签）
+   警示色    #BC9494  灰砖红（驳回 / 故障 / 删除 / 损耗）
+   页面背景  #F1F5F6（冷调浅灰蓝）
+   卡片底色  #FFFFFF
+   主要文字  #454B4F
+   次要文字  #82898E
+   整体低饱和、清冷克制，贴合实验室气质
+   ============================================================ */
+
+:root {
+  /* ---------- 主色：莫兰迪雾蓝 ---------- */
+  --el-color-primary: #8fa9bc;
+  --el-color-primary-light-3: #b0c3d0;
+  --el-color-primary-light-5: #c7d4dd;
+  --el-color-primary-light-7: #dde5eb;
+  --el-color-primary-light-8: #e8edf1;
+  --el-color-primary-light-9: #f3f6f8;
+  --el-color-primary-dark-2: #7a94a6;
+
+  /* ---------- 成功：玻璃青 ---------- */
+  --el-color-success: #9fb8ae;
+  --el-color-success-light-3: #bccdc6;
+  --el-color-success-light-5: #d4dbd6;
+  --el-color-success-light-7: #e3e8e5;
+  --el-color-success-light-8: #ebf1ed;
+  --el-color-success-light-9: #f5f8f6;
+  --el-color-success-dark-2: #7f938b;
+
+  /* ---------- 提醒：试剂琥珀 ---------- */
+  --el-color-warning: #c9b4a0;
+  --el-color-warning-light-3: #d9cabd;
+  --el-color-warning-light-5: #e4d9cf;
+  --el-color-warning-light-7: #eee8e2;
+  --el-color-warning-light-8: #f4f0ec;
+  --el-color-warning-light-9: #f9f7f5;
+  --el-color-warning-dark-2: #a19080;
+
+  /* ---------- 警示：灰砖红 ---------- */
+  --el-color-danger: #bc9494;
+  --el-color-danger-light-3: #d0b4b4;
+  --el-color-danger-light-5: #ddcaca;
+  --el-color-danger-light-7: #ebdfdf;
+  --el-color-danger-light-8: #f2eaea;
+  --el-color-danger-light-9: #f8f4f4;
+  --el-color-danger-dark-2: #967676;
+
+  --el-color-error: #bc9494;
+  --el-color-error-light-3: #d0b4b4;
+  --el-color-error-light-5: #ddcaca;
+  --el-color-error-light-7: #ebdfdf;
+  --el-color-error-light-8: #f2eaea;
+  --el-color-error-light-9: #f8f4f4;
+  --el-color-error-dark-2: #967676;
+
+  /* ---------- 信息 / 石蕊紫 ---------- */
+  --el-color-info: #a9a6b8;
+  --el-color-info-light-3: #c3c0cd;
+  --el-color-info-light-5: #d4d2db;
+  --el-color-info-light-7: #e1e3e9;
+  --el-color-info-light-8: #e8edf1;
+  --el-color-info-light-9: #f3f6f9;
+  --el-color-info-dark-2: #878493;
+
+  /* ---------- 文字（全局可读性规范：主文 #333 / 辅助 #666 / 占位 #777） ---------- */
+  --el-text-color-primary: #333333;
+  --el-text-color-regular: #333333;
+  --el-text-color-secondary: #666666;
+  --el-text-color-placeholder: #777777;
+  --el-text-color-disabled: #9a9a9a;
+
+  /* ---------- 字号基准 ---------- */
+  --el-font-size-extra-large: 18px;
+  --el-font-size-large: 16px;
+  --el-font-size-medium: 15px;
+  --el-font-size-base: 14px;
+  --el-font-size-small: 13px;
+  --el-font-size-extra-small: 12px;
+
+  /* ---------- 边框 ---------- */
+  --el-border-color: #e2e9ed;
+  --el-border-color-light: #e8eef1;
+  --el-border-color-lighter: #edf2f4;
+  --el-border-color-extra-light: #f4f7f8;
+  --el-border-color-dark: #d5dee3;
+  --el-border-color-darker: #c7d2d8;
+
+  /* ---------- 填充 ---------- */
+  --el-fill-color: #f2f5f6;
+  --el-fill-color-light: #f5f8f9;
+  --el-fill-color-lighter: #f8fafa;
+  --el-fill-color-extra-light: #fafcfc;
+  --el-fill-color-dark: #e9eff1;
+  --el-fill-color-darker: #dfe7ea;
+  --el-fill-color-blank: #ffffff;
+
+  /* ---------- 背景 ---------- */
+  --el-bg-color: #ffffff;
+  --el-bg-color-page: #f1f5f6;
+  --el-bg-color-overlay: #ffffff;
+
+  /* ---------- 圆角与阴影 ---------- */
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --el-box-shadow-light: 0 4px 16px rgba(150, 165, 175, 0.08);
+
+  /* ---------- 表格 ---------- */
+  --el-table-header-bg-color: #eef3f6;
+  --el-table-header-text-color: #333333;
+  --el-table-text-color: #333333;
+  --el-table-row-hover-bg-color: #e7eff4;
+  --el-table-border-color: #e6edf1;
+
+  /* ---------- 主题色板（图表 / 标签 / 日历复用） ---------- */
+  --mo-blue: #8fa9bc;        /* 雾蓝：主色 */
+  --mo-blue-deep: #7a94a6;   /* 雾蓝加深：hover */
+  --mo-teal: #9fb8ae;        /* 玻璃青 */
+  --mo-amber: #c9b4a0;       /* 试剂琥珀 */
+  --mo-brick: #bc9494;       /* 灰砖红 */
+  --mo-lilac: #a9a6b8;       /* 石蕊紫 */
+  --mo-taupe: #c7bdb4;       /* 米灰 */
+  --mo-bg: #f1f5f6;
+  --mo-bg-deep: #e2eaed;
+  --mo-card: #ffffff;
+  --mo-line: #e6edf1;
+  --mo-text: #333333;          /* 主要正文 */
+  --mo-text-sub: #666666;      /* 辅助说明 */
+  --mo-text-hint: #777777;     /* 占位 / 空状态 */
+  --mo-accent: #5f7e90;        /* 强调 / 超链接：主色加深档，白底对比度 4.6:1 */
+  --mo-accent-soft: #52707f;
+}
+
+/* ============================================================
+   基础层
+   ============================================================ */
+body {
+  background-color: var(--mo-bg);
+  color: var(--el-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #dbe7ee;
+  color: #454b4f;
+}
+
+/* 柔和滚动条 */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb {
+  background: #d0dde4;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: #bfd0d9; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ============================================================
+   按钮：主色 #8FA9BC，hover #7A94A6，禁用浅灰蓝，轻微按压反馈
+   ============================================================ */
+.el-button {
+  border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+              box-shadow 0.2s ease, transform 0.08s ease;
+}
+.el-button:not(.is-disabled):active {
+  transform: translateY(1px);
+}
+.el-button--primary:not(.is-link):not(.is-text):not(.is-disabled) {
+  box-shadow: 0 2px 8px rgba(143, 169, 188, 0.24);
+}
+.el-button--primary:not(.is-link):not(.is-text):not(.is-disabled):hover {
+  background-color: #7a94a6;
+  border-color: #7a94a6;
+  box-shadow: 0 4px 12px rgba(122, 148, 166, 0.28);
+}
+.el-button--primary:not(.is-link):not(.is-text):not(.is-disabled):active {
+  background-color: #64798a;
+  border-color: #64798a;
+  box-shadow: 0 1px 4px rgba(122, 148, 166, 0.22);
+}
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:hover,
+.el-button--primary.is-disabled:active {
+  background-color: #e4eaee;
+  border-color: #e4eaee;
+  color: #b0bac1;
+  box-shadow: none;
+}
+.el-button.is-link,
+.el-button.is-text {
+  font-weight: 500;
+}
+
+/* ============================================================
+   输入框：聚焦雾蓝描边 + 淡外阴影；错误态灰砖红
+   ============================================================ */
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--el-border-color) inset;
+  transition: box-shadow 0.2s ease;
+}
+.el-input__wrapper:hover,
+.el-textarea__inner:hover,
+.el-select__wrapper:hover {
+  box-shadow: 0 0 0 1px #ccd9e0 inset;
+}
+.el-input__wrapper.is-focus,
+.el-textarea__inner:focus,
+.el-select__wrapper.is-focused {
+  box-shadow: 0 0 0 1px #8fa9bc inset, 0 0 0 3px rgba(143, 169, 188, 0.16);
+}
+
+/* 校验失败：边框 #BC9494 + 下方错误提示 */
+.el-form-item.is-error .el-input__wrapper,
+.el-form-item.is-error .el-textarea__inner,
+.el-form-item.is-error .el-select__wrapper {
+  box-shadow: 0 0 0 1px #bc9494 inset;
+}
+.el-form-item.is-error .el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px #bc9494 inset, 0 0 0 3px rgba(188, 148, 148, 0.14);
+}
+.el-form-item__error {
+  color: #bc9494;
+  font-size: 12px;
+  padding-top: 4px;
+  letter-spacing: 0.2px;
+}
+
+/* ============================================================
+   卡片 / 弹窗 / 浮层
+   ============================================================ */
+.el-card,
+.el-dialog,
+.el-message-box {
+  border-radius: 14px;
+}
+.el-dialog {
+  box-shadow: 0 18px 48px rgba(130, 145, 155, 0.16);
+}
+.el-overlay {
+  background-color: rgba(69, 75, 79, 0.3);
+}
+.el-popper.is-light {
+  border-color: var(--el-border-color-light);
+  box-shadow: 0 6px 24px rgba(130, 145, 155, 0.14);
+}
+
+/* ============================================================
+   标签：莫兰迪蓝系底 + 深一档文字
+   ============================================================ */
+.el-tag {
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.el-tag--primary {
+  background-color: #e9f0f4;
+  color: #5f7e90;
+}
+.el-tag--success {
+  background-color: #edf3f0;
+  color: #6f8f85;
+}
+.el-tag--warning {
+  background-color: #f4efe9;
+  color: #9a8570;
+}
+.el-tag--danger {
+  background-color: #f5e9e9;
+  color: #966b6b;
+}
+.el-tag--info {
+  background-color: #efeef4;
+  color: #7c7e92;
+}
+
+/* ============================================================
+   表格 / 分页 / 标签页
+   ============================================================ */
+.el-table th.el-table__cell {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.el-table {
+  --el-table-border-color: var(--el-border-color-lighter);
+}
+.el-pagination.is-background .el-pager li {
+  border-radius: 6px;
+}
+.el-tabs__item.is-active {
+  font-weight: 600;
+}
+
+/* 单选按钮组（角色选择）统一主色 */
+.el-radio-button__inner {
+  border-color: var(--el-border-color);
+  color: var(--el-text-color-regular);
+  font-weight: 500;
+}
+.el-radio-button__original-radio:checked + .el-radio-button__inner {
+  background-color: var(--el-color-primary);
+  border-color: var(--el-color-primary);
+  box-shadow: -1px 0 0 0 var(--el-color-primary);
+  color: #fff;
+}
+
+/* 空状态 */
+.el-empty__description p {
+  color: var(--el-text-color-secondary);
+}
+
+/* 消息提示柔和化 */
+.el-message {
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(130, 145, 155, 0.14);
+  border-color: var(--el-border-color-light);
+}
+
+/* ============================================================
+   全局可读性规范层  Readability Layer
+   ------------------------------------------------------------
+   仅提升字号 / 文字颜色 / 对比度 / 行高，不改布局、配色与业务
+   - 主要正文 #333333
+   - 辅助说明 #666666
+   - 占位与空状态 #777777
+   - 强调与超链接 主色加深档 #5F7E90（白底 4.6:1）
+   - 任何承担阅读任务的文字不小于 12px
+   ============================================================ */
+
+/* ---------- 1. 基础排版 ---------- */
+body,
+.el-button,
+.el-input__inner,
+.el-textarea__inner,
+.el-select__placeholder,
+.el-form-item__label,
+.el-table,
+.el-tag,
+.el-dialog,
+.el-message-box,
+.el-dropdown-menu,
+.el-pagination,
+.el-descriptions,
+.el-empty {
+  font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 超链接 / 强调文字：统一主色加深档，保证白底可读 */
+a,
+.el-link,
+.el-link--primary {
+  color: var(--mo-accent);
+}
+a:hover,
+.el-link:hover {
+  color: var(--mo-accent-soft);
+}
+
+/* ---------- 2. 表格 ---------- */
+.el-table {
+  font-size: 14px;
+  color: #333333;
+}
+.el-table th.el-table__cell {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: 0.3px;
+  padding: 11px 0;
+  background-color: var(--el-table-header-bg-color);
+}
+.el-table td.el-table__cell {
+  font-size: 14px;
+  color: #333333;
+  padding: 13px 0;
+  line-height: 1.55;
+}
+.el-table .cell {
+  line-height: 1.55;
+  padding: 0 14px;
+}
+/* 次要字段（型号 / 地点 / 备注）不小于 12px 且加深 */
+.el-table .cell small,
+.el-table .cell .sub,
+.el-table .cell .muted,
+.el-table .cell .table-sub {
+  font-size: 12.5px;
+  color: #666666;
+}
+/* hover 行：柔和但明显可见 */
+.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
+  background-color: #e7eff4;
+}
+.el-table__body tr.current-row > td.el-table__cell,
+.el-table__body tr.el-table__row--striped.current-row > td.el-table__cell {
+  background-color: #e3ecf1;
+}
+/* 空表格提示 */
+.el-table__empty-text {
+  font-size: 13px;
+  color: #777777;
+  line-height: 2;
+}
+
+/* ---------- 3. 状态标签 ---------- */
+.el-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.el-tag--small {
+  font-size: 12px;
+  font-weight: 600;
+  height: 24px;
+  padding: 0 9px;
+}
+.el-tag--large {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- 4. 表单 / 输入 ---------- */
+.el-form-item__label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #333333;
+}
+.el-input__inner,
+.el-textarea__inner,
+.el-select__selected-item,
+.el-select__placeholder {
+  font-size: 14px;
+  color: #333333;
+}
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder {
+  color: #777777;
+  opacity: 1;
+}
+.el-select__placeholder.is-transparent {
+  color: #777777;
+  opacity: 1;
+}
+.el-form-item__error {
+  font-size: 12.5px;
+  color: #b08080;
+  font-weight: 500;
+}
+
+/* ---------- 5. 按钮 ---------- */
+.el-button {
+  font-size: 14px;
+  font-weight: 500;
+}
+.el-button--small {
+  font-size: 13px;
+}
+.el-button--large {
+  font-size: 15px;
+}
+/* 次按钮：浅色描边 + 浅灰底，文字始终深色可读 */
+.el-button--default:not(.is-text):not(.is-link):not(.is-disabled) {
+  background-color: #f7fafb;
+  border-color: #d8e3e9;
+  color: #333333;
+}
+.el-button--default:not(.is-text):not(.is-link):not(.is-disabled):hover {
+  background-color: #eef4f7;
+  border-color: #a9c0cf;
+  color: #26404d;
+}
+/* 文字按钮（编辑/删除等）保持清晰对比 */
+.el-button.is-text,
+.el-button.is-link {
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+/* ---------- 6. 弹窗 ---------- */
+.el-dialog__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: 0.3px;
+}
+.el-dialog__header {
+  padding-bottom: 14px;
+}
+.el-dialog__body {
+  font-size: 14px;
+  color: #333333;
+}
+.el-message-box__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+.el-message-box__message {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* ---------- 7. 下拉 / 分页 / 描述列表 ---------- */
+.el-dropdown-menu__item,
+.el-select-dropdown__item {
+  font-size: 14px;
+  color: #333333;
+}
+.el-pagination {
+  font-size: 13px;
+  color: #333333;
+}
+.el-pagination button,
+.el-pager li {
+  font-size: 13px;
+}
+.el-descriptions__label {
+  font-size: 13px;
+  color: #666666;
+}
+.el-descriptions__content {
+  font-size: 14px;
+  color: #333333;
+}
+
+/* ---------- 8. 空状态 / 提示 ---------- */
+.el-empty__description p {
+  font-size: 13px;
+  color: #777777;
+}
+.el-empty__description {
+  color: #777777;
+}
+.el-message {
+  font-size: 14px;
+}
+.el-message__content {
+  font-size: 14px;
+  color: #333333;
+}
+.el-tooltip__popper,
+.el-popper.is-dark {
+  font-size: 13px;
+}
+
+/* ---------- 9. 操作列文字按钮：统一加深，保证投影下可读 ---------- */
+.el-button.is-text,
+.el-button.is-link {
+  color: #4a6c80;
+}
+.el-button.is-text:hover,
+.el-button.is-link:hover {
+  color: #38566a;
+  background-color: #e9f1f5;
+}
+.el-button--danger.is-text,
+.el-button--danger.is-link {
+  color: #a06a6a;
+}
+.el-button--danger.is-text:hover,
+.el-button--danger.is-link:hover {
+  color: #8a5050;
+  background-color: #f5e9e9;
+}
+.el-button--warning.is-text,
+.el-button--warning.is-link {
+  color: #96805f;
+}
+.el-button--success.is-text,
+.el-button--success.is-link {
+  color: #5f8378;
+}
+/* 下拉菜单里的操作项同步加深 */
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  color: #38566a;
+  background-color: #e9f1f5;
+}
+
+/* ============================================================
+   登录 / 注册页提示浮窗：莫兰迪浅红（柔和、不刺眼）
+   ============================================================ */
+.el-message.auth-tip {
+  background-color: #f9f3f3;
+  border-color: #ecdcdc;
+  box-shadow: 0 6px 20px rgba(160, 130, 130, 0.14);
+}
+.el-message.auth-tip .el-message__content {
+  color: #a47070;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+}
+.el-message.auth-tip .el-message__icon {
+  color: #c09595;
+}
