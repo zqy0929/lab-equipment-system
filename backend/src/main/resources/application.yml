@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/lab_equipment?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/${DB_NAME:lab_equipment}?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     # 敏感信息通过环境变量注入，勿把真实密码写进仓库
     # 本地开发：复制根目录 env.local.bat.example 为 env.local.bat 并填写 DB_PASSWORD
     username: ${DB_USERNAME:root}
